@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplexer & Demultiplexer | Teknik Digital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- LOADING SCREEN -->
+    <div class="loading-screen">
+        <div class="loader"></div>
+        <p>Loading...</p>
+    </div>
+
+    <!-- STARS BACKGROUND -->
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    <div class="stars3"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="logo-icon">⚡</span>
+            Teknik Digital
+        </div>
+        <ul class="nav-menu">
+            <li><a href="#pendahuluan">Pendahuluan</a></li>
+            <li><a href="#mux">MUX</a></li>
+            <li><a href="#demux">DEMUX</a></li>
+            <li><a href="#simulasi">Simulasi</a></li>
+            <li><a href="#video">Video</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-content">
+            <h1 class="glitch" data-text="Multiplexer & Demultiplexer">Multiplexer & Demultiplexer</h1>
+            <p class="subtitle">Materi Teknik Digital | Blog Edukasi</p>
+            <div class="header-decoration">
+                <div class="pulse-circle"></div>
+                <div class="pulse-circle"></div>
+                <div class="pulse-circle"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- IDENTITAS -->
+    <section class="author">
+        <h3>👨‍💻 Disusun Oleh</h3>
+        <div class="author-cards">
+            <div class="author-card">
+                <div class="author-icon">P</div>
+                <p><strong>Purnomo Jeremy Bambang</strong><br>202431026</p>
+            </div>
+            <div class="author-card">
+                <div class="author-icon">A</div>
+                <p><strong>Atha Adhyazhafir</strong><br>202431027</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN -->
+    <main class="container">
+
+        <section id="pendahuluan" class="card fade-in">
+            <div class="card-header">
+                <span class="card-icon">📚</span>
+                <h2>Pendahuluan</h2>
+            </div>
+            <p>
+                Multiplexer (MUX) dan Demultiplexer (DEMUX) adalah rangkaian logika
+                kombinasi yang digunakan untuk mengatur aliran data secara efisien
+                dalam Teknik Digital.
+            </p>
+            <div class="info-grid">
+                <div class="info-item">
+                    <h4>🔀 Multiplexer</h4>
+                    <p>Many to One</p>
+                </div>
+                <div class="info-item">
+                    <h4>🔁 Demultiplexer</h4>
+                    <p>One to Many</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="mux" class="card fade-in">
+            <div class="card-header">
+                <span class="card-icon">🔀</span>
+                <h2>Multiplexer (MUX)</h2>
+            </div>
+            <p>
+                Multiplexer berfungsi memilih satu dari beberapa input
+                berdasarkan nilai select line dan meneruskannya ke satu output.
+            </p>
+            
+            <div class="diagram-container">
+                <div class="mux-diagram">
+                    <div class="inputs">
+                        <div class="input-line">I0</div>
+                        <div class="input-line">I1</div>
+                        <div class="input-line">I2</div>
+                        <div class="input-line">I3</div>
+                    </div>
+                    <div class="mux-body">
+                        <div class="mux-label">MUX<br>4:1</div>
+                    </div>
+                    <div class="output-line">Y</div>
+                    <div class="select-lines">
+                        <div class="select">S1</div>
+                        <div class="select">S0</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Rumus Boolean</h3>
+            <pre class="code-block">
+Y = I0·S1'·S0' + I1·S1'·S0 + I2·S1·S0' + I3·S1·S0
+            </pre>
+
+            <div class="feature-box">
+                <h4>✨ Karakteristik MUX</h4>
+                <ul>
+                    <li>Memiliki 2ⁿ input data</li>
+                    <li>Memiliki n select line</li>
+                    <li>Memiliki 1 output</li>
+                    <li>Digunakan untuk data routing dan switching</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="demux" class="card fade-in">
+            <div class="card-header">
+                <span class="card-icon">🔁</span>
+                <h2>Demultiplexer (DEMUX)</h2>
+            </div>
+            <p>
+                Demultiplexer merupakan kebalikan dari multiplexer,
+                yaitu menyalurkan satu input ke salah satu dari beberapa output.
+            </p>
+
+            <div class="diagram-container">
+                <div class="demux-diagram">
+                    <div class="input-line-single">D</div>
+                    <div class="demux-body">
+                        <div class="demux-label">DEMUX<br>1:4</div>
+                    </div>
+                    <div class="outputs">
+                        <div class="output-line-multi">Y0</div>
+                        <div class="output-line-multi">Y1</div>
+                        <div class="output-line-multi">Y2</div>
+                        <div class="output-line-multi">Y3</div>
+                    </div>
+                    <div class="select-lines-demux">
+                        <div class="select">S1</div>
+                        <div class="select">S0</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Rumus Boolean</h3>
+            <pre class="code-block">
+Y0 = D·S1'·S0'
+Y1 = D·S1'·S0
+Y2 = D·S1·S0'
+Y3 = D·S1·S0
+            </pre>
+
+            <div class="feature-box">
+                <h4>✨ Karakteristik DEMUX</h4>
+                <ul>
+                    <li>Memiliki 1 input data</li>
+                    <li>Memiliki n select line</li>
+                    <li>Memiliki 2ⁿ output</li>
+                    <li>Digunakan untuk data distribution</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="simulasi" class="card fade-in">
+            <div class="card-header">
+                <span class="card-icon">🎮</span>
+                <h2>Simulasi Interaktif MUX 4:1</h2>
+            </div>
+            
+            <div class="simulator">
+                <div class="sim-inputs">
+                    <h4>Input Data</h4>
+                    <label class="switch-label">
+                        I0: <input type="checkbox" id="i0" onchange="hitungMux()">
+                        <span class="switch"></span>
+                    </label>
+                    <label class="switch-label">
+                        I1: <input type="checkbox" id="i1" onchange="hitungMux()">
+                        <span class="switch"></span>
+                    </label>
+                    <label class="switch-label">
+                        I2: <input type="checkbox" id="i2" onchange="hitungMux()">
+                        <span class="switch"></span>
+                    </label>
+                    <label class="switch-label">
+                        I3: <input type="checkbox" id="i3" onchange="hitungMux()">
+                        <span class="switch"></span>
+                    </label>
+                </div>
+
+                <div class="sim-selects">
+                    <h4>Select Lines</h4>
+                    <label class="switch-label">
+                        S1: <input type="checkbox" id="s1" onchange="hitungMux()">
+                        <span class="switch"></span>
+                    </label>
+                    <label class="switch-label">
+                        S0: <input type="checkbox" id="s0" onchange="hitungMux()">
+                        <span class="switch"></span>
+                    </label>
+                </div>
+
+                <div class="sim-output">
+                    <h4>Output</h4>
+                    <div class="output-display">
+                        <div class="output-value" id="output">0</div>
+                    </div>
+                    <p class="selected-input">Input Terpilih: <span id="selected">I0</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card fade-in">
+            <div class="card-header">
+                <span class="card-icon">📝</span>
+                <h2>Contoh Soal</h2>
+            </div>
+            <div class="question-box">
+                <p>
+                    Jika MUX 4:1 memiliki <strong>S1=1</strong> dan <strong>S0=0</strong> serta <strong>I2=1</strong>,
+                    maka berapakah outputnya?
+                </p>
+
+                <button class="btn" onclick="tampilJawaban()">
+                    <span>💡</span> Tampilkan Jawaban
+                </button>
+
+                <div id="jawaban" class="answer-box">
+                    <h4>✅ Jawaban:</h4>
+                    <p>Output bernilai <strong>1</strong> karena input yang dipilih adalah <strong>I2</strong>.</p>
+                    <div class="explanation">
+                        <p><strong>Penjelasan:</strong></p>
+                        <p>Dengan S1=1 dan S0=0, select lines menunjuk ke I2 (biner 10 = 2 desimal).</p>
+                        <p>Karena I2=1, maka output Y=1.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="video" class="card fade-in">
+            <div class="card-header">
+                <span class="card-icon">🎥</span>
+                <h2>Referensi Video YouTube</h2>
+            </div>
+
+            <div class="video-grid">
+                <div class="video-wrapper">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/88fQr4Z9q7c" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowfullscreen></iframe>
+                    </div>
+                    <p class="video-title">Penjelasan Multiplexer</p>
+                </div>
+
+                <div class="video-wrapper">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/AbjETy1rnyM" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowfullscreen></iframe>
+                    </div>
+                    <p class="video-title">Penjelasan Demultiplexer</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCROLL TO TOP BUTTON -->
+        <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+            ↑
+        </button>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 | Blog Teknik Digital</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
